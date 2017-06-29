@@ -5,7 +5,12 @@
  <script>
  	function reverseArray(arrayToReverse)
  	{
- 		return arrayToReverse
+ 		var newArray = [];
+ 		for (var i = 0; i < arrayToReverse.length; i++)
+ 		{
+ 			newArray.unshift(arrayToReverse[i])
+ 		}
+ 		return newArray;
  	}
  	
  	function reverseArrayInPlace(arrayToReverse)
