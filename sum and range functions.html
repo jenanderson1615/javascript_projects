@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+ <script>
+	function range(start, end) {
+  		var rangeArray = [];
+  		for (var index = start; index <= end; index++)
+  		{
+  			rangeArray.push(index);
+  		}
+  		return rangeArray;
+	}
+	
+	function sum(rangeArray)
+	{
+		var sum = 0
+		for (var i = 0; i < rangeArray.length; i++)
+		{
+			sum += rangeArray[i];
+		}
+		return sum;
+	}
+	
+	function range(start, end, step) {
+  		var rangeArray = [];
+  		if(!step)
+  		{
+  			step = 1
+  		}
+  		if(step < 0)
+  		{
+  			for (var index = start; index >= end; index += step)
+  			{
+  				rangeArray.push(index);
+  			}
+  		}
+  		else
+  		{
+  			for (var index = start; index <= end; index += step)
+  			{
+  				rangeArray.push(index);
+  			}
+  		}
+  		return rangeArray;
+	}
+
+console.log(range(1, 10)); //should print an array with all values from 1 to 10
+console.log(sum(range(1, 10))); //should return 55
+console.log(range(5, 2, -1)); //should print [1, 3, 5, 7, 9]
+</script>
+</body>
+</html>
