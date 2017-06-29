@@ -22,7 +22,14 @@
  	
  	function listToArray(passedInList)
  	{
- 		return passedInList;
+ 		var myArray = [];
+ 		//node gets set to the rest object each time through loop
+ 		//runs as long as node isn't null
+ 		for (var node = passedInList; node; node = node.rest) 
+ 		{
+ 			myArray.push(node.value);
+ 		}
+ 		return myArray;
  	}
  	
  	function prepend(value, list)
