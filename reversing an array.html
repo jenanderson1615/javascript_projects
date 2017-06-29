@@ -13,13 +13,22 @@
  		return newArray;
  	}
  	
+ 	//Can't create a new array for this method
  	function reverseArrayInPlace(arrayToReverse)
  	{
- 		return arrayToReverse
+ 		var halfLength = Math.floor(arrayToReverse.length/2);
+ 		for(var i = 0; i < halfLength; i++)
+ 		{
+ 			var valueInFirstHalf = arrayToReverse[i];
+ 			var correspondingPosition = arrayToReverse.length - 1 - i;
+ 			arrayToReverse[i] = arrayToReverse[correspondingPosition];
+ 			arrayToReverse[correspondingPosition] = valueInFirstHalf;
+ 		}
+ 		return arrayToReverse;
  	}
 	
 	console.log(reverseArray(["A", "B", "C"])); //should print ["C", "B", "A"];
-	var arrayValue = [1, 2, 3, 4, 5];
+	var arrayValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 	reverseArrayInPlace(arrayValue);
 	console.log(arrayValue);   //should print [5, 4, 3, 2, 1]
 </script>
