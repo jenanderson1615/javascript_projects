@@ -12,10 +12,7 @@
  				};
  		for(var i = arrayLength - 2; i >= 0; i--)
  		{
- 			myList = {
- 				value: arrayToTransform[i],
- 				rest: myList
- 			};
+ 			myList = prepend(arrayToTransform[i], myList);
  		}
  		return myList;
  	}
@@ -34,6 +31,10 @@
  	
  	function prepend(value, list)
  	{
+ 		list = {
+ 				value: value,
+ 				rest: list
+ 			};
  		return list;
  	}
  	
