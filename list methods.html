@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<script>
+
+ 	function arrayToList(arrayToTransform)
+ 	{
+ 		var arrayLength = arrayToTransform.length;
+ 		var myList = {
+ 					value: arrayToTransform[arrayLength - 1],
+ 					rest: null
+ 				};
+ 		for(var i = arrayLength - 2; i >= 0; i--)
+ 		{
+ 			myList = {
+ 				value: arrayToTransform[i],
+ 				rest: myList
+ 			};
+ 		}
+ 		return myList;
+ 	}
+ 	
+ 	function listToArray(passedInList)
+ 	{
+ 		return passedInList;
+ 	}
+ 	
+ 	function prepend(value, list)
+ 	{
+ 		return list;
+ 	}
+ 	
+ 	function nth(list, position)
+ 	{
+ 		return 0;
+ 	}
+ 	
+ 	console.log(arrayToList([10, 20]));
+		// → {value: 10, rest: {value: 20, rest: null}}
+	console.log(listToArray(arrayToList([10, 20, 30])));
+		// → [10, 20, 30]
+	console.log(prepend(10, prepend(20, null)));
+		// → {value: 10, rest: {value: 20, rest: null}}
+	console.log(nth(arrayToList([10, 20, 30]), 1));
+		//20
+</script>
+</body>
+</html>
