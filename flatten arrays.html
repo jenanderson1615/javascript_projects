@@ -2,14 +2,10 @@
 <html>
 <body>
 <script>
-
- 	function flattenArray(arrayToTransform)
- 	{
- 		return arrayToTransform;
- 	}
- 	
  	var arrays = [[1, 2, 3], [4, 5], [6]];
- 	console.log(flattenArray(arrays));
+ 	console.log(arrays.reduce(function(a,b){
+ 		return a.concat(b);
+ 	}));
 		// [1, 2, 3, 4, 5, 6]
 </script>
 </body>
